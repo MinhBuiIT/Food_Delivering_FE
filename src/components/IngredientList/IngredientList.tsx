@@ -65,6 +65,11 @@ const IngredientList = ({ ingredients, setIngredientList, setTotalPrice, quantit
                         onChange={(e) => handleChooseIngredient(e, 'required', item)}
                       />
                       <span className='ms-2 text-[18px]'>{item.name}</span>
+                      {!item.stock && (
+                        <span className='bg-red-100 ml-3 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded   border border-red-400'>
+                          Hết Hàng
+                        </span>
+                      )}
                     </div>
                     {item.price > 0 && <span className='text-[18px]'>{formatPrice(item.price)}</span>}
                   </div>
@@ -85,6 +90,11 @@ const IngredientList = ({ ingredients, setIngredientList, setTotalPrice, quantit
                         onChange={(e) => handleChooseIngredient(e, 'optional', item)}
                       />
                       <span className='ms-2 text-[18px]'>{item.name}</span>
+                      {!item.stock && (
+                        <span className='bg-red-100 ml-3 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded   border border-red-400'>
+                          Hết Hàng
+                        </span>
+                      )}
                     </div>
                     {item.price > 0 && <span className='text-[18px]'>{formatPrice(item.price)}</span>}
                   </div>
